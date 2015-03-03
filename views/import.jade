@@ -1,0 +1,14 @@
+extends ./layout.jade
+
+block content
+  div(class='pure-g')
+    div(class='pure-g pure-u-1')
+      div(class='pure-u-1-8')
+      div(class='pure-u-3-4')
+        div(class='pure-g pure-u-1')
+          if imported
+            h1 Success!
+          else
+            h1 Sorry...
+            
+            p Some or all of your items failed to import.

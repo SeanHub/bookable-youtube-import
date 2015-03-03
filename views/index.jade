@@ -1,0 +1,16 @@
+extends ./layout.jade
+
+block content
+  div(class='pure-g')
+    div(class='pure-g pure-u-1')
+      div(class='pure-u-1-8')
+      div(class='pure-u-3-4')
+        div(class='pure-g pure-u-1')
+          p You're here because you want your YouTube playlists imported into Bookable, no problem.
+          
+          p First you'll need to provide us with an access token, they're under you user profile.
+          
+          form(action="/me/access" method="POST")
+            input(name="accessToken" placeholder="your access token" type="text")
+            
+            input(type="submit" value="Done")

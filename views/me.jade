@@ -1,0 +1,20 @@
+extends ./layout.jade
+
+block content
+  div(class='pure-g')
+    div(class='pure-g pure-u-1')
+      div(class='pure-u-1-8')
+      div(class='pure-u-3-4')
+        div(class='pure-g pure-u-1')
+          h1 Hi 
+            span!= user.firstName
+            span !
+          
+          p
+            strong Your access token: 
+            span!= user.accessToken
+            
+          form(action="/import" method="POST")
+            input(name="playlistId" placeholder="playlist id" type="text")
+            
+            input(type="submit" value="Import")

@@ -1,0 +1,15 @@
+body {
+  background-color: #2a223e;
+}
+
+.byi-header {
+  background-color: #463867;
+  margin: 0 0 10px 0;
+}
+
+.pure-g [class *= "pure-u"] {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  word-wrap: break-word;
+  white-space: pre;
+}
