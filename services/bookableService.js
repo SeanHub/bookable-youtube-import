@@ -45,11 +45,11 @@ module.exports = {
         json: data 
       },
       function (err, response, body) {
-        if (err) {
-          callback("access token failed", null);
+        if (!err && response.statusCode == 201) {
+          callback(null, "success");
         }
         else {
-          callback(null, "success");
+          callback(response.body, null);
         };
       });
   }

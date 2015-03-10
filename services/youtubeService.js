@@ -4,7 +4,7 @@ var request = require("request");
 
 module.exports = {
   getPlaylist: function (id, callback) {
-    let dataUrl = `https://gdata.youtube.com/feeds/api/playlists/${ id }?v=2&alt=json`;
+    let dataUrl = 'https://gdata.youtube.com/feeds/api/playlists/' + id + '?v=2&alt=json&max-results=50';
     
     request({
       method: "GET",
