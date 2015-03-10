@@ -8,7 +8,7 @@ module.exports = {
     else {
       request({
         method: "GET",
-        uri: "https://bookable.herokuapp.com/api/v1/user",
+        uri: "https://bookable.herokuapp.com/api/v1/me",
         headers: {
           "Authorization": accessToken
         }
@@ -37,7 +37,7 @@ module.exports = {
     
     request({
         method: "POST",
-        uri: "https://bookable.herokuapp.com/api/v1/bookmark",
+        uri: "https://bookable.herokuapp.com/api/v1/bookmarks",
         headers: {
           "Authorization": accessToken,
           "Content-Type": "application/json"

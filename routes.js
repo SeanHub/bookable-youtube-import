@@ -42,7 +42,8 @@ module.exports = function (app) {
   });
   
   app.post("/import", function (req, res) {
-    let playlistId = req.body.playlistId;
+    var playlistId = req.body.playlistId,
+        imported = true;
     
     youtubeService.getPlaylist(playlistId, function (err, list) {
       var youtubeUrl = "https://www.youtube.com/watch?v=";
@@ -53,15 +54,14 @@ module.exports = function (app) {
             videoId = fragments[fragments.length - 2],
             videoUrl = `${ youtubeUrl }${ videoId }`;
         
-        bookableService.addBookmark(req.session.user.accessToken, videoUrl, ["yt-imported"], function (err, success) {
+        bookableService.addBookmark(req.session.user.accessToken, videoUrl, ["youtube import"], function (err, success) {
           if (err) {
-            res.render("import", { imported: false });
-          }
-          else {
-            res.render("import", { imported: true });
-          }
+            imported = false;
+          };
         });
       });
+      
+      res.render("import", { imported: imported });
     });
   });
 };
